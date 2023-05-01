@@ -31,7 +31,7 @@ public class StudentController {
     public  void deleteStudent(@RequestParam int id){
         studentService.deleteStudent(id);
     }
-    @PutMapping("/student/{department}/{id}")
+    @PutMapping("/student/{id}/{department}")
     public  String updateStudent(@PathVariable int id ,@PathVariable Department department ){
         return  studentService.updateStudentInService(id,department);
     }

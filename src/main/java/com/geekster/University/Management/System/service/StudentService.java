@@ -3,6 +3,7 @@ package com.geekster.University.Management.System.service;
 import com.geekster.University.Management.System.dao.StudentRepo;
 import com.geekster.University.Management.System.model.Department;
 import com.geekster.University.Management.System.model.StudentModel;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +37,7 @@ public class StudentService {
     public void deleteStudent(int id) {
         studentRepo.deleteById(id);
     }
-
+    @Transactional
     public String updateStudentInService(int id,Department department) {
         String departmentString=department.name();
         studentRepo.updateDepartment(id,departmentString);
